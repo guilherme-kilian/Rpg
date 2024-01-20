@@ -6,39 +6,25 @@ public static class AuthenticationConfig
 {
     public static WebApplicationBuilder AddAuthenticationConfig(this WebApplicationBuilder builder)
     {
-        builder.Services.AddBff();
-
-        builder.Services.AddAuthentication(options =>
+        builder.Services.AddAuthentication("Bearer")
+        .AddJwtBearer("Bearer", options =>
         {
-            options.DefaultScheme = "cookie";
-            options.DefaultChallengeScheme = "oidc";
-            options.DefaultSignOutScheme = "oidc";
-        })
-            .AddCookie("cookie", options =>
+            options.Authority = "https://localhost:7501";
+
+            options.TokenValidationParameters = new TokenValidationParameters
             {
-                options.Cookie.Name = "__Host-blazor";
-                options.Cookie.SameSite = SameSiteMode.Strict;
-            })
-            .AddOpenIdConnect("oidc", options =>
+                ValidateAudience = false
+            };
+        });
+
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("Api", policy =>
             {
-                options.Authority = "https://demo.duendesoftware.com";
-
-                options.ClientId = "interactive.confidential";
-                options.ClientSecret = "secret";
-                options.ResponseType = "code";
-                options.ResponseMode = "query";
-
-                options.Scope.Clear();
-                options.Scope.Add("openid");
-                options.Scope.Add("profile");
-                options.Scope.Add("api");
-                options.Scope.Add("offline_access");
-
-                options.MapInboundClaims = false;
-                options.GetClaimsFromUserInfoEndpoint = true;
-                options.SaveTokens = true;
+                policy.RequireAuthenticatedUser();
+                policy.RequireClaim("scope", "api-rpg");
             });
-
+        });
 
         return builder;
     }

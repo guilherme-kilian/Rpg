@@ -19,8 +19,6 @@ public class IdentityProfile
             new IdentityResources.Email(),
         };
 
-    //public IEnumerable<ApiResource> GetApiResources() => _settings.Select(s => new ApiResource(s.Name, s.DisplayName));
-
     public IEnumerable<ApiScope> GetApiScopes() => _settings.Select(s => new ApiScope(s.Name, s.DisplayName));
 
     public IEnumerable<Client> GetClients() => _settings.Select(s => new Client
@@ -30,18 +28,15 @@ public class IdentityProfile
         ClientName = s.ClientName,
         AllowedGrantTypes = GrantTypes.CodeAndClientCredentials,
         ClientSecrets = { new Secret(s.ClientSecret.Sha256()) },
-        RedirectUris = { $"{s.Host}/authentication/login-callback" },
-        RequireConsent = false,
-        RequirePkce = true,
-        PostLogoutRedirectUris = { s.Host },
-        AllowedCorsOrigins = { s.Host },
+        RedirectUris = { $"https://localhost:7501/signin-oidc" },
+        PostLogoutRedirectUris = { "https://localhost:7501/signout-callback-oidc" },
         AllowedScopes = new List<string>
         {
             IdentityServerConstants.StandardScopes.OpenId,
             IdentityServerConstants.StandardScopes.Profile,
+            IdentityServerConstants.StandardScopes.Email,
             s.Scope
         },
         AllowOfflineAccess = true,
-        AllowAccessTokensViaBrowser = true
     });
 }

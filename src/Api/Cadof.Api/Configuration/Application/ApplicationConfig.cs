@@ -2,7 +2,7 @@
 
 public static class ApplicationConfig
 {
-    public static WebApplication AddApplicationConfig(this WebApplication app, AppSettings appSettings)
+    public static WebApplication AddApplicationConfig(this WebApplication app)
     {
         app.UseHttpsRedirection();
 
@@ -10,11 +10,8 @@ public static class ApplicationConfig
 
         app.UseAuthorization();
 
-        app.UseBff();
-
-        app.MapBffManagementEndpoints();
-
-        app.MapControllers();
+        app.MapControllers()
+            .RequireAuthorization();
 
         return app;
     }

@@ -20,5 +20,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app
-    .AddApplicationConfig(appSettings)
+    .AddApplicationConfig()
     .Run();
