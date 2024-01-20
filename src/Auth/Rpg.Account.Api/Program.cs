@@ -1,14 +1,13 @@
-using Cadof.Api.Configuration.Application;
-using Cadof.Api.Configuration.Services;
+using Rpg.Account.Api.Configuration.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+
 builder
     .AddGeneralConfig(out var appSettings)
-    .AddAuthenticationConfig()
     .AddApiConfig()
-    .AddLoggingConfig()
-    .AddDbConfig();
+    .AddIdentityConfig(appSettings);
 
 var app = builder.Build();
 
@@ -19,6 +18,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app
-    .AddApplicationConfig(appSettings)
-    .Run();
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
