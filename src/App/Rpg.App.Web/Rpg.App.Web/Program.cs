@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Components.Authorization;
+using Rpg.App.Web.Authentication;
 using Rpg.App.Web.Client.Pages;
 using Rpg.App.Web.Components;
+using Rpg.App.Web.DelegatingHandlers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +10,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, BffAuthenticationStateProvider>();
+
+// HTTP client configuration
+builder.Services.AddTransient<AntiforgeryHandler>();
+
+builder.Services.AddHttpClient("backend", client => client.BaseAddress = new Uri("https://localhost:7275")) // replace for the current baseAddress
+    .AddHttpMessageHandler<AntiforgeryHandler>();
+builder.Services.AddTransient(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("backend"));
+
 
 var app = builder.Build();
 

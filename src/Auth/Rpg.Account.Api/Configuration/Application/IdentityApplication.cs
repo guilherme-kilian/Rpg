@@ -7,10 +7,9 @@ namespace Rpg.Account.Api.Configuration.Application;
 
 public static class IdentityApplication
 {
-    public static WebApplication AddApplicationConfig(this WebApplication app, AppSettings appSettings)
+    public static WebApplication AddIdentityConfig(this WebApplication app, AppSettings appSettings)
     {
         InitializeDatabase(app, appSettings);
-
         return app;
     }
 

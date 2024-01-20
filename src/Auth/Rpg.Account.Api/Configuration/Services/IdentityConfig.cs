@@ -13,7 +13,7 @@ public static class IdentityConfig
 
     private static void AddIdentityServer(WebApplicationBuilder builder, AppSettings appSettings)
     {
-        var migrationsAssembly = "Rpg.Infra";
+        var migrationsAssembly = typeof(Program).Assembly.GetName().Name;
 
         var connectionString = builder.Configuration.GetConnectionString("Default") ?? throw new ArgumentNullException("ConnectionStringCanNotBeNull");
 
