@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Rpg.App.Web;
 using Rpg.App.Web.Configuration.Authentication;
+using Serilog;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -12,6 +13,11 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 
 builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, BffAuthenticationStateProvider>();
+
+//builder.Services.AddSerilog(opt =>
+//{
+//    opt.WriteTo.Console();
+//});
 
 builder.Services.AddTransient<AntiforgeryHandler>();
 

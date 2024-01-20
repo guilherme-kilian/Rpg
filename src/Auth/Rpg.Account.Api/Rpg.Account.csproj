@@ -9,8 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="6.3.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-	<PackageReference Include="Duende.IdentityServer.EntityFramework" Version="6.3.8" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
 	<PackageReference Include="AutoMapper" Version="12.0.1" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />

@@ -1,5 +1,6 @@
 using Rpg.Account.Api.Configuration.Application;
 using Rpg.Account.Api.Configuration.Services;
+using Rpg.Account.Api.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 

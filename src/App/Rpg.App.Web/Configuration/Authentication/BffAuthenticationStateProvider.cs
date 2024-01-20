@@ -5,8 +5,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 
 namespace Rpg.App.Web.Configuration.Authentication;
 
-public class BffAuthenticationStateProvider
-    : AuthenticationStateProvider
+public class BffAuthenticationStateProvider : AuthenticationStateProvider
 {
     private static readonly TimeSpan UserCacheRefreshInterval
         = TimeSpan.FromSeconds(60);

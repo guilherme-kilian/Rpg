@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rpg.Api", "src\Api\Cadof.Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{E1C5F9E5-B5EA-4DAB-A34B-C49EB40D539C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rpg.Account.Api", "src\Auth\Rpg.Account.Api\Rpg.Account.Api.csproj", "{0F1250B2-140E-44BE-84DF-E62A187FE0BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rpg.Account", "src\Auth\Rpg.Account.Api\Rpg.Account.csproj", "{0F1250B2-140E-44BE-84DF-E62A187FE0BA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rpg.App.Web", "src\App\Rpg.App.Web\Rpg.App.Web.csproj", "{B32AD9DB-1C81-4E67-8819-C7BB2628DEB6}"
 EndProject

@@ -25,7 +25,7 @@ public static class AuthenticationConfig
             {
                 options.Authority = "https://localhost:7501";
 
-                options.ClientId = "api-rpg";
+                options.ClientId = "bff";
                 options.ClientSecret = "batata123";
                 options.ResponseType = "code";
                 options.ResponseMode = "query";
