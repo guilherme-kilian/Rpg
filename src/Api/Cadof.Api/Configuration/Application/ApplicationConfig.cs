@@ -6,8 +6,6 @@ public static class ApplicationConfig
     {
         app.UseHttpsRedirection();
 
-        app.UseIdentityServer();
-
         app.UseAuthentication();
 
         app.UseAuthorization();
