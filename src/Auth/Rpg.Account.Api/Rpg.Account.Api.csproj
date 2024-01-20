@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <InvariantGlobalization>true</InvariantGlobalization>
+    <InvariantGlobalization>false</InvariantGlobalization>
     <UserSecretsId>e7957b63-8182-4e88-93be-816cb7996cc2</UserSecretsId>
   </PropertyGroup>
 
@@ -14,6 +14,10 @@
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
 	<PackageReference Include="AutoMapper" Version="12.0.1" />
 	<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.1">
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		<PrivateAssets>all</PrivateAssets>
+	</PackageReference>
   </ItemGroup>
 
   <ItemGroup>
