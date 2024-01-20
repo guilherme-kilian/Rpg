@@ -1,18 +1,20 @@
-﻿namespace Rpg.Account.Api.Configuration.Application;
+﻿using Serilog;
+
+namespace Rpg.Account.Api.Configuration.Application;
 
 public static class ApplicationConfig
 {
     public static WebApplication AddApplicationConfig(this WebApplication app)
     {
-        app.UseHttpsRedirection();
+        app.UseSerilogRequestLogging();
 
-        app.UseAuthentication();
-
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseIdentityServer();
         app.UseAuthorization();
 
-        app.UseIdentityServer();
-
-        app.MapControllers();
+        app.MapRazorPages()
+            .RequireAuthorization();
 
         return app;
     }

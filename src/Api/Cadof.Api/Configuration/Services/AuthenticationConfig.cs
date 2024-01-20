@@ -9,7 +9,7 @@ public static class AuthenticationConfig
         builder.Services.AddAuthentication("Bearer")
         .AddJwtBearer("Bearer", options =>
         {
-            options.Authority = "https://localhost:7501";
+            options.Authority = "https://localhost:8003";
 
             options.TokenValidationParameters = new TokenValidationParameters
             {
