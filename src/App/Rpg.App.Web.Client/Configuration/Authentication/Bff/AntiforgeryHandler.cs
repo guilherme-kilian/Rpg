@@ -1,4 +1,4 @@
-﻿namespace Rpg.App.Web.Configuration.Authentication;
+﻿namespace Rpg.App.Web.Client.Configuration.Authentication.Bff;
 
 public class AntiforgeryHandler : DelegatingHandler
 {

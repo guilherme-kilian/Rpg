@@ -3,7 +3,7 @@ using System.Net.Http.Json;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Components.Authorization;
 
-namespace Rpg.App.Web.Configuration.Authentication;
+namespace Rpg.App.Web.Client.Configuration.Authentication.Bff;
 
 public class BffAuthenticationStateProvider : AuthenticationStateProvider
 {

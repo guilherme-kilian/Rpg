@@ -5,15 +5,9 @@
     </div>
 
     <main>
-        <AuthorizeView>
-            <Authorized>
-                <strong>Hello, @context.User.Identity.Name!</strong>
-                <a href="@context.User.FindFirst("bff:logout_url")?.Value">Log out</a>
-            </Authorized>
-            <NotAuthorized>
-                <a href="bff/login">Log in</a>
-            </NotAuthorized>
-        </AuthorizeView>
+        <div class="top-row px-4">
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+        </div>
 
         <article class="content px-4">
             @Body
