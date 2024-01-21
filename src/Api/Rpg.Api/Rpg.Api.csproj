@@ -35,9 +35,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Cadof.Core\Rpg.Core.csproj" />
-    <ProjectReference Include="..\..\Cadof.Domain\Rpg.Domain.csproj" />
-    <ProjectReference Include="..\..\Cadof.Shared\Rpg.Shared.csproj" />
     <ProjectReference Include="..\..\Rpg.Core\Rpg.Core.csproj" />
   </ItemGroup>
 

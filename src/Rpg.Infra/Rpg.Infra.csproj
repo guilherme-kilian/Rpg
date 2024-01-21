@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cadof.Domain\Rpg.Domain.csproj" />
     <ProjectReference Include="..\Rpg.Domain\Rpg.Domain.csproj" />
   </ItemGroup>
 
