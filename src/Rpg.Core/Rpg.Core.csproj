@@ -11,10 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Cadof.Infra\Rpg.Infra.csproj" />
+    <ProjectReference Include="..\Rpg.Infra\Rpg.Infra.csproj" />
+    <ProjectReference Include="..\Rpg.Shared\Rpg.Shared.csproj" />
   </ItemGroup>
 
 </Project>
