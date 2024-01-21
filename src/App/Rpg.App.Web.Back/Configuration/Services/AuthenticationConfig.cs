@@ -23,7 +23,7 @@ public static class AuthenticationConfig
             })
             .AddOpenIdConnect("oidc", options =>
             {
-                options.Authority = "https://localhost:7501";
+                options.Authority = "https://localhost:8003";
 
                 options.ClientId = "bff";
                 options.ClientSecret = "batata123";

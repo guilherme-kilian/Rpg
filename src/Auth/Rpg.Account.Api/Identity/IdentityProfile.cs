@@ -59,7 +59,7 @@ public class IdentityProfile
 
             AllowOfflineAccess = true,
 
-            AllowedScopes = { "openid", "profile", "remote_api" }
+            AllowedScopes = { "openid", "profile", "remote_api", "api-rpg"}
         });
 
         return clients;

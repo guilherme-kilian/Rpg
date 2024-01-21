@@ -9,6 +9,7 @@ public static class IdentityConfig
 {
     public static WebApplicationBuilder AddIdentityConfig(this WebApplicationBuilder builder, AppSettings appSettings)
     {
+        builder.Services.AddControllersWithViews();
         builder.Services.AddRazorPages();
 
         AddIdentityServer(builder, appSettings);
