@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder
     .AddGeneralConfig(out var appSettings)
-    .AddApiConfig()
     .AddIdentityConfig(appSettings);
 
 var app = builder.Build();
@@ -16,5 +15,4 @@ var app = builder.Build();
 
 app
     .AddApplicationConfig()
-    .AddIdentityConfig(appSettings)
     .Run();

@@ -10,7 +10,6 @@ public class IdentitySettings
 {
     public string Name { get; set; }
     public string DisplayName { get; set; }
-    public string Host { get; set; }
     public string ClientName { get; set; }
     public string ClientId { get; set; }
     public string ClientSecret { get; set; }

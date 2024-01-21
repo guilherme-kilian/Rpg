@@ -14,11 +14,6 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, BffAuthenticationStateProvider>();
 
-//builder.Services.AddSerilog(opt =>
-//{
-//    opt.WriteTo.Console();
-//});
-
 builder.Services.AddTransient<AntiforgeryHandler>();
 
 builder.Services.AddHttpClient("backend", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
