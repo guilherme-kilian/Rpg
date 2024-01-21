@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /src/Api/Cadof.Api/tempkey.jwk
 /src/Api/Cadof.Api/keys
+/src/Auth/Rpg.Account/keys/is-signing-key-5B4DAEAD0D4B38ABD64A402C7913F1B1.json
