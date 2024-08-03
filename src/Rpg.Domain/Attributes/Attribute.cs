@@ -1,7 +1,7 @@
 ﻿using Rpg.Domain.Shared;
 
 namespace Rpg.Domain.Attributes;
-public class CharacterAttribute : SoftDeleteEntity
+public class Stats : SoftDeleteEntity
 {
     public int Intelligence { get; private set; }
     public int Charisma { get; private set; }

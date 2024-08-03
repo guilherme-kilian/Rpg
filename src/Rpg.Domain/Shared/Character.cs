@@ -1,4 +1,6 @@
 ﻿using Rpg.Domain.Attributes;
+using Rpg.Domain.Spells;
+using Rpg.Domain.Weapons;
 using System.ComponentModel.DataAnnotations;
 
 namespace Rpg.Domain.Shared;
@@ -10,12 +12,13 @@ public abstract class Character : SoftDeleteEntity
     public string Name { get; private set; }
 
     [Required]
-    public CharacterAttribute Attribute { get; private set; }
-
+    public Stats Attribute { get; private set; }
     public double Experience { get; private set; }
     public int Level { get; private set; }
     public int MaxHealth { get; set; }
     public int CurrentHealth { get; set; }
+    public Weapon? Weapon { get; set; }
+    public List<Spell> Spells { get; set; } = [];
 
     public void NextLevel()
     {

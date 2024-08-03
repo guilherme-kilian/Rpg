@@ -1,5 +1,4 @@
 ﻿using Rpg.Domain.Shared;
-using System.ComponentModel.DataAnnotations;
 
 namespace Rpg.Domain.Adventures;
 
