@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Rpg.Infra.Migrations
 {
     [DbContext(typeof(CadofContext))]
-    [Migration("20240120145611_Initial")]
+    [Migration("20240803160840_Initial")]
     partial class Initial
     {
         /// <inheritdoc />

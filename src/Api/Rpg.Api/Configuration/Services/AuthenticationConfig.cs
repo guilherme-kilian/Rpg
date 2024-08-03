@@ -19,7 +19,7 @@ public static class AuthenticationConfig
 
         builder.Services.AddAuthorization(options =>
         {
-            options.AddPolicy("Api", policy =>
+            options.AddPolicy("ApiPolicy", policy =>
             {
                 policy.RequireAuthenticatedUser();
                 policy.RequireClaim("scope", "api-rpg");

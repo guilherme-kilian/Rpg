@@ -6,6 +6,8 @@ public static class GeneralConfig
 {
     public static WebApplicationBuilder AddGeneralConfig(this WebApplicationBuilder builder, out AppSettings appsettings)
     {
+        builder.Configuration.AddEnvironmentVariables("Rpg_Account_");
+
         appsettings = builder.Configuration.GetRequiredSection(nameof(AppSettings)).Get<AppSettings>() ?? throw new ArgumentNullException("EmptyAppSettings");
         builder.Services.AddHttpContextAccessor();
 

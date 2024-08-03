@@ -7,14 +7,13 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rpg.Account.Context;
 
-
 #nullable disable
 
 namespace Rpg.Account.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240120205517_DbConfigs")]
-    partial class DbConfigs
+    [Migration("20240803160736_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -183,6 +182,10 @@ namespace Rpg.Account.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)

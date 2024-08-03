@@ -11,7 +11,7 @@ public static class ApplicationConfig
         app.UseAuthorization();
 
         app.MapControllers()
-            .RequireAuthorization();
+            .RequireAuthorization("ApiPolicy");
 
         return app;
     }

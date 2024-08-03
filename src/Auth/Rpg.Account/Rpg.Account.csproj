@@ -6,6 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <InvariantGlobalization>false</InvariantGlobalization>
     <UserSecretsId>e7957b63-8182-4e88-93be-816cb7996cc2</UserSecretsId>
+	<IsPublishable>true</IsPublishable>
+	<EnableSdkContainerSupport>true</EnableSdkContainerSupport>
+	<ContainerRepository>guikilian/rpg-account</ContainerRepository>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +20,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.NET.Build.Containers" Version="8.0.303" />
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.1" />
