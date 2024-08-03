@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Rpg.Account.Models;
-using Rpg.Account.Pages;
 
-namespace IdentityServerAspNetIdentity.Pages.Login;
+namespace Rpg.Account.Pages.Account.Login;
 
 [SecurityHeaders]
 [AllowAnonymous]
@@ -24,10 +23,10 @@ public class Index : PageModel
     private readonly IIdentityProviderStore _identityProviderStore;
 
     public ViewModel View { get; set; }
-        
+
     [BindProperty]
     public InputModel Input { get; set; }
-        
+
     public Index(
         IIdentityServerInteractionService interaction,
         IAuthenticationSchemeProvider schemeProvider,
@@ -43,20 +42,18 @@ public class Index : PageModel
         _identityProviderStore = identityProviderStore;
         _events = events;
     }
-        
+
     public async Task<IActionResult> OnGet(string returnUrl)
     {
         await BuildModelAsync(returnUrl);
-            
+
         if (View.IsExternalLoginOnly)
-        {
             // we only have one option for logging in and it's an external provider
             return RedirectToPage("/ExternalLogin/Challenge", new { scheme = View.ExternalLoginScheme, returnUrl });
-        }
 
         return Page();
     }
-        
+
     public async Task<IActionResult> OnPost()
     {
         // check if we are in the context of an authorization request
@@ -64,7 +61,6 @@ public class Index : PageModel
 
         // the user clicked the "cancel" button
         if (Input.Button != "login")
-        {
             if (context != null)
             {
                 // if the user cancels, send a result back into IdentityServer as if they 
@@ -74,20 +70,15 @@ public class Index : PageModel
 
                 // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
                 if (context.IsNativeClient())
-                {
                     // The client is native, so this change in how to
                     // return the response is for better UX for the end user.
                     return this.LoadingPage(Input.ReturnUrl);
-                }
 
                 return Redirect(Input.ReturnUrl);
             }
             else
-            {
                 // since we don't have a valid context, then we just go back to the home page
                 return Redirect("~/");
-            }
-        }
 
         if (ModelState.IsValid)
         {
@@ -100,11 +91,9 @@ public class Index : PageModel
                 if (context != null)
                 {
                     if (context.IsNativeClient())
-                    {
                         // The client is native, so this change in how to
                         // return the response is for better UX for the end user.
                         return this.LoadingPage(Input.ReturnUrl);
-                    }
 
                     // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
                     return Redirect(Input.ReturnUrl);
@@ -112,21 +101,15 @@ public class Index : PageModel
 
                 // request for a local page
                 if (Url.IsLocalUrl(Input.ReturnUrl))
-                {
                     return Redirect(Input.ReturnUrl);
-                }
                 else if (string.IsNullOrEmpty(Input.ReturnUrl))
-                {
                     return Redirect("~/");
-                }
                 else
-                {
                     // user might have clicked on a malicious link - should be logged
                     throw new Exception("invalid return URL");
-                }
             }
 
-            await _events.RaiseAsync(new UserLoginFailureEvent(Input.Username, "invalid credentials", clientId:context?.Client.ClientId));
+            await _events.RaiseAsync(new UserLoginFailureEvent(Input.Username, "invalid credentials", clientId: context?.Client.ClientId));
             ModelState.AddModelError(string.Empty, LoginOptions.InvalidCredentialsErrorMessage);
         }
 
@@ -134,14 +117,14 @@ public class Index : PageModel
         await BuildModelAsync(Input.ReturnUrl);
         return Page();
     }
-        
+
     private async Task BuildModelAsync(string returnUrl)
     {
         Input = new InputModel
         {
             ReturnUrl = returnUrl
         };
-            
+
         var context = await _interaction.GetAuthorizationContextAsync(returnUrl);
         if (context?.IdP != null && await _schemeProvider.GetSchemeAsync(context.IdP) != null)
         {
@@ -156,9 +139,7 @@ public class Index : PageModel
             Input.Username = context?.LoginHint;
 
             if (!local)
-            {
                 View.ExternalProviders = new[] { new ViewModel.ExternalProvider { AuthenticationScheme = context.IdP } };
-            }
 
             return;
         }
@@ -189,9 +170,7 @@ public class Index : PageModel
         {
             allowLocal = client.EnableLocalLogin;
             if (client.IdentityProviderRestrictions != null && client.IdentityProviderRestrictions.Any())
-            {
                 providers = providers.Where(provider => client.IdentityProviderRestrictions.Contains(provider.AuthenticationScheme)).ToList();
-            }
         }
 
         View = new ViewModel

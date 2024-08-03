@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Cadof.Shared.Models.SignUp;
+namespace Rpg.Shared.Models.SignUp;
 
 public class CreateUserModel
 {
@@ -10,7 +10,7 @@ public class CreateUserModel
     [StringLength(100, MinimumLength = 5)]
     public string UserName { get; set; }
 
-    [EmailAddress]    
+    [EmailAddress]
     public required string Email { get; set; }
 
     [StringLength(200, MinimumLength = 5)]

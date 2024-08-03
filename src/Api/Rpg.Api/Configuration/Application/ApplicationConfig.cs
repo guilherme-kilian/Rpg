@@ -1,4 +1,4 @@
-﻿namespace Cadof.Api.Configuration.Application;
+﻿namespace Rpg.Api.Configuration.Application;
 
 public static class ApplicationConfig
 {

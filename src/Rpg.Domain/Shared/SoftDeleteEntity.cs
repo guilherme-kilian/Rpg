@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Cadof.Domain.Shared;
+﻿namespace Rpg.Domain.Shared;
 public class SoftDeleteEntity : Entity
 {
     public bool Deleted { get; private set; }

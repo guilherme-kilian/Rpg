@@ -1,7 +1,8 @@
-﻿using Cadof.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Rpg.Domain.Characters;
+using Rpg.Domain.Users;
 
-namespace Cadof.Infra.Context;
+namespace Rpg.Infra.Context;
 
 public class CadofContext : DbContext, IDbContext
 {

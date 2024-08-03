@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
-using Cadof.Domain;
-using Cadof.Shared.Models.Character;
-using Cadof.Shared.Models.CharacterType;
-using Cadof.Shared.Models.User;
+using Rpg.Domain.Characters;
+using Rpg.Domain.Users;
+using Rpg.Shared.Models.Character;
+using Rpg.Shared.Models.CharacterType;
+using Rpg.Shared.Models.User;
 
-namespace Cadof.Api;
+namespace Rpg.Api;
 
 public class MappingProfile : Profile
 {

@@ -4,7 +4,7 @@
 
 using System.ComponentModel.DataAnnotations;
 
-namespace IdentityServer.Pages.Create;
+namespace Rpg.Account.Pages.Account.Create;
 
 public class InputModel
 {

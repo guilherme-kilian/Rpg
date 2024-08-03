@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using Cadof.Domain;
-using Cadof.Infra.Context;
-using Cadof.Shared.Models.Character;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Rpg.Infra.Context;
+using Rpg.Shared.Models.Character;
 
-namespace Cadof.Api.Controllers;
+namespace Rpg.Api.Controllers;
 
 [ApiController]
 [Authorize]

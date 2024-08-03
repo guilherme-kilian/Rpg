@@ -1,8 +1,8 @@
-﻿namespace Cadof.Core.Services;
+﻿namespace Rpg.Core.Services;
 public class AuthService
 {
     public AuthService()
     {
-        
+
     }
 }

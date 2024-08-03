@@ -1,6 +1,6 @@
-﻿using Cadof.Infra.Context;
+﻿using Rpg.Infra.Context;
 
-namespace Cadof.Core.AppService;
+namespace Rpg.Core.AppService;
 public class BaseAppService
 {
     private readonly IDbContext _db;

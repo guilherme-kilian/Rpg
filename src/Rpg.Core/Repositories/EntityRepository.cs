@@ -1,12 +1,7 @@
-﻿using Cadof.Domain.Shared;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Rpg.Domain.Shared;
 
-namespace Cadof.Core.Repositories;
+namespace Rpg.Core.Repositories;
 public static class EntityRepository
 {
     public static IQueryable<SoftDeleteEntity> Active(this IQueryable<SoftDeleteEntity> query) => query.Where(q => !q.Deleted);

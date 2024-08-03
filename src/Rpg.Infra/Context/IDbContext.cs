@@ -1,7 +1,7 @@
-﻿using Cadof.Domain;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Rpg.Domain.Characters;
 
-namespace Cadof.Infra.Context;
+namespace Rpg.Infra.Context;
 
 public interface IDbContext
 {

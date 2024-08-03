@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Cadof.Domain;
+namespace Rpg.Domain.Users;
 public class User : IdentityUser
 {
     public string Name { get; set; }

@@ -1,12 +1,7 @@
-﻿using Cadof.Shared.Models.CharacterType;
-using Cadof.Shared.Models.User;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Rpg.Shared.Models.CharacterType;
+using Rpg.Shared.Models.User;
 
-namespace Cadof.Shared.Models.Character;
+namespace Rpg.Shared.Models.Character;
 public class CharacterModel
 {
     public required string Name { get; set; }

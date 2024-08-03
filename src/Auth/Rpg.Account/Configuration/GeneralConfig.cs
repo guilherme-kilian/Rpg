@@ -1,5 +1,4 @@
-﻿using Rpg.Account.Api;
-using Serilog;
+﻿using Serilog;
 
 namespace Rpg.Account.Configuration;
 

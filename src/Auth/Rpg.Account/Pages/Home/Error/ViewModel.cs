@@ -3,7 +3,7 @@
 
 using Duende.IdentityServer.Models;
 
-namespace IdentityServerAspNetIdentity.Pages.Error;
+namespace Rpg.Account.Pages.Home.Error;
 
 public class ViewModel
 {

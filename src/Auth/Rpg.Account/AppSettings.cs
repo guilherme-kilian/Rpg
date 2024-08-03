@@ -1,4 +1,4 @@
-﻿namespace Rpg.Account.Api;
+﻿namespace Rpg.Account;
 
 public class AppSettings
 {

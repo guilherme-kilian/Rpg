@@ -1,9 +1,8 @@
 using Duende.IdentityServer.Services;
-using IdentityServerAspNetIdentity.Pages.Error;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Rpg.Account.Pages.Error;
+namespace Rpg.Account.Pages.Home.Error;
 
 [AllowAnonymous]
 [SecurityHeaders]

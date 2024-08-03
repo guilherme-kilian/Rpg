@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace IdentityServerAspNetIdentity.Pages.Redirect;
+namespace Rpg.Account.Pages.Redirect;
 
 [AllowAnonymous]
 public class IndexModel : PageModel
@@ -12,9 +12,7 @@ public class IndexModel : PageModel
     public IActionResult OnGet(string redirectUri)
     {
         if (!Url.IsLocalUrl(redirectUri))
-        {
             return RedirectToPage("/Home/Error/Index");
-        }
 
         RedirectUri = redirectUri;
         return Page();

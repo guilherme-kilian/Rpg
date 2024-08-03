@@ -1,4 +1,4 @@
-namespace IdentityServerAspNetIdentity.Pages.Login;
+namespace Rpg.Account.Pages.Account.Login;
 
 public class LoginOptions
 {

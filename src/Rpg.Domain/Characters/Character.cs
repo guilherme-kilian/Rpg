@@ -1,9 +1,10 @@
-﻿using Cadof.Domain.Shared;
+﻿using Rpg.Domain.Shared;
+using Rpg.Domain.Users;
 using System.ComponentModel.DataAnnotations;
 
-namespace Cadof.Domain;
+namespace Rpg.Domain.Characters;
 
-public class Character : SoftDeleteEntity
+public class Character : PlayerEntity
 {
     [Required]
     [StringLength(200, MinimumLength = 1)]

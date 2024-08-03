@@ -1,4 +1,4 @@
-﻿namespace Cadof.Api.Configuration.Services;
+﻿namespace Rpg.Api.Configuration.Services;
 
 public static class ApiConfig
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Cadof.Api.Controllers;
+namespace Rpg.Api.Controllers;
 
 [ApiExplorerSettings(IgnoreApi = true)]
 [Route("/")]

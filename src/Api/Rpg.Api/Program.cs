@@ -1,5 +1,5 @@
-using Cadof.Api.Configuration.Application;
-using Cadof.Api.Configuration.Services;
+using Rpg.Api.Configuration.Application;
+using Rpg.Api.Configuration.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

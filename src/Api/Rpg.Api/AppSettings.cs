@@ -1,5 +1,4 @@
-﻿
-namespace Cadof.Api;
+﻿namespace Rpg.Api;
 
 public class AppSettings
 {

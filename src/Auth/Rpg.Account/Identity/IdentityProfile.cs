@@ -1,7 +1,7 @@
 ﻿using Duende.IdentityServer;
 using Duende.IdentityServer.Models;
 
-namespace Rpg.Account.Api.Identity;
+namespace Rpg.Account.Identity;
 
 public class IdentityProfile
 {
@@ -59,7 +59,7 @@ public class IdentityProfile
 
             AllowOfflineAccess = true,
 
-            AllowedScopes = { "openid", "profile", "remote_api", "api-rpg"}
+            AllowedScopes = { "openid", "profile", "remote_api", "api-rpg" }
         });
 
         return clients;

@@ -1,5 +1,5 @@
-using Rpg.Account.Api.Identity;
 using Rpg.Account.Configuration;
+using Rpg.Account.Identity;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);

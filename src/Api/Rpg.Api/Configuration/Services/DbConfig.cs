@@ -1,8 +1,8 @@
-﻿using Cadof.Core.Exceptions;
-using Cadof.Infra.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Rpg.Core.Exceptions;
+using Rpg.Infra.Context;
 
-namespace Cadof.Api.Configuration.Services;
+namespace Rpg.Api.Configuration.Services;
 
 public static class DbConfig
 {

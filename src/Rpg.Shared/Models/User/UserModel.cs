@@ -1,4 +1,4 @@
-﻿namespace Cadof.Shared.Models.User;
+﻿namespace Rpg.Shared.Models.User;
 public class UserModel
 {
     public required string UserName { get; set; }

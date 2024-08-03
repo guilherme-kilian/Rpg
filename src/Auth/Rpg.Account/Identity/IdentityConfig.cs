@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Rpg.Account.Context;
 using Rpg.Account.Models;
 
-namespace Rpg.Account.Api.Identity;
+namespace Rpg.Account.Identity;
 
 public static class IdentityConfig
 {
@@ -19,7 +19,7 @@ public static class IdentityConfig
 
     private static void AddIdentityServer(WebApplicationBuilder builder, AppSettings appSettings)
     {
-         var profile = new IdentityProfile(appSettings.Identities);
+        var profile = new IdentityProfile(appSettings.Identities);
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));

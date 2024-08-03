@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Cadof.Api.Controllers;
+namespace Rpg.Api.Controllers;
 
 [ApiController]
 [Route("v1/[controller]")]
