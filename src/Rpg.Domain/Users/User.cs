@@ -3,7 +3,7 @@
 namespace Rpg.Domain.Users;
 public class User : IdentityUser
 {
-    public string Name { get; set; }
+    public string Name { get; private set; }
 
     /// <summary>
     /// for entity

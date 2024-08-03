@@ -11,7 +11,7 @@ using Rpg.Infra.Context;
 
 namespace Rpg.Infra.Migrations
 {
-    [DbContext(typeof(CadofContext))]
+    [DbContext(typeof(RpgContext))]
     [Migration("20240803160840_Initial")]
     partial class Initial
     {

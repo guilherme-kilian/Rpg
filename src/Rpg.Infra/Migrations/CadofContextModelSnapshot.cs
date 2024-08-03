@@ -10,7 +10,7 @@ using Rpg.Infra.Context;
 
 namespace Rpg.Infra.Migrations
 {
-    [DbContext(typeof(CadofContext))]
+    [DbContext(typeof(RpgContext))]
     partial class CadofContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

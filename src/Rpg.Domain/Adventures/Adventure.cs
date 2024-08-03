@@ -7,13 +7,15 @@ namespace Rpg.Domain.Adventures;
 public class Adventure : SoftDeleteEntity
 {
     [Required]
-    public string Name { get; set; }
+    public string Name { get; private set; }
 
     [Required]
-    public User Master { get; set; }
+    public User Master { get; private set; }
 
     [Required]
-    public List<Character> Players { get; set; }
+    public List<Player> Players { get; private set; }
+
+    public AdventureConfig Configuration { get; private set; }
 
     protected Adventure() { }
 }

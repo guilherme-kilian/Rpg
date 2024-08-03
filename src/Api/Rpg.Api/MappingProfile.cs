@@ -11,8 +11,8 @@ public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<Character, CharacterModel>();
-        CreateMap<CharacterType, CharacterTypeModel>();
+        CreateMap<Player, CharacterModel>();
+        CreateMap<PlayerType, CharacterTypeModel>();
         CreateMap<User, UserModel>();
     }
 }
