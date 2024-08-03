@@ -1,6 +1,6 @@
-using Rpg.Account.Api.Configuration.Application;
-using Rpg.Account.Api.Configuration.Services;
 using Rpg.Account.Api.Identity;
+using Rpg.Account.Configuration;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +12,14 @@ builder
 
 var app = builder.Build();
 
-app
-    .AddApplicationConfig()
-    .Run();
+app.UseSerilogRequestLogging();
+app.UseDeveloperExceptionPage();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseIdentityServer();
+app.UseAuthorization();
+
+app.MapRazorPages()
+    .RequireAuthorization();
+
+app.Run();

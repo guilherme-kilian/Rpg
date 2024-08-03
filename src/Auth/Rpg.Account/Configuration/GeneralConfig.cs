@@ -1,6 +1,7 @@
-﻿using Serilog;
+﻿using Rpg.Account.Api;
+using Serilog;
 
-namespace Rpg.Account.Api.Configuration.Services;
+namespace Rpg.Account.Configuration;
 
 public static class GeneralConfig
 {
