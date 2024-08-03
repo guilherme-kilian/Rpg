@@ -76,7 +76,7 @@ public class Index : PageModel
                 // since we don't have a valid context, then we just go back to the home page
                 return Redirect("~/");
 
-        if (_userManager.FindByNameAsync(Input.Username) != null)
+        if (await _userManager.FindByNameAsync(Input.Username) != null)
             ModelState.AddModelError("Input.Username", "Invalid username");
 
         if (ModelState.IsValid)

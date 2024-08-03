@@ -12,7 +12,6 @@ builder
 
 var app = builder.Build();
 
-
 app
     .AddApplicationConfig()
     .Run();

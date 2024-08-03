@@ -1,12 +1,19 @@
-using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Rpg.App.Web.Client;
-using Rpg.App.Web.Client.Configuration.Services;
+using Rpg.App.Web.Client.Bff;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
-builder.RootComponents.Add<App>("#app");
-builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.AddBffConfigs();
+// authentication state and authorization
+builder.Services.AddAuthorizationCore();
+builder.Services.AddScoped<AuthenticationStateProvider, BffAuthenticationStateProvider>();
+builder.Services.AddCascadingAuthenticationState();
+
+// HTTP client configuration
+builder.Services.AddTransient<AntiforgeryHandler>();
+builder.Services.AddHttpClient("backend", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress))
+    .AddHttpMessageHandler<AntiforgeryHandler>();
+builder.Services.AddTransient(sp =>
+    sp.GetRequiredService<IHttpClientFactory>().CreateClient("backend"));
 
 await builder.Build().RunAsync();
