@@ -24,6 +24,7 @@ public class RpgContext : DbContext, IDbContext
     public DbSet<BattleStatistic> BattleStatistics { get; set; }
     public DbSet<CharacterStatistic> CharacterStatistics { get; set; }
     public DbSet<CharacterAttribute> CharacterAttributes { get; set; }
+    public DbSet<AdventureConfig> AdventureConfigs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

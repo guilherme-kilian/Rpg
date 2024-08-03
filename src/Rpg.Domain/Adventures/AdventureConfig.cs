@@ -1,6 +1,9 @@
-﻿namespace Rpg.Domain.Adventures;
+﻿using Rpg.Domain.Shared;
+using System.ComponentModel.DataAnnotations;
 
-public class AdventureConfig
+namespace Rpg.Domain.Adventures;
+
+public class AdventureConfig : Entity
 {
     public int InitialLevel { get; set; }
 

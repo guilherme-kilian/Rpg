@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Rpg.Domain.Adventures;
+using Rpg.Domain.Attributes;
 using Rpg.Domain.Battles;
 using Rpg.Domain.Shared;
 using Rpg.Domain.Statistics;
@@ -16,4 +17,6 @@ public interface IDbContext
     DbSet<Battle> Battles { get; set; }
     DbSet<BattleStatistic> BattleStatistics { get; set; }
     DbSet<CharacterStatistic> CharacterStatistics { get; set; }
+    DbSet<AdventureConfig> AdventureConfigs { get; set; }
+    DbSet<CharacterAttribute> CharacterAttributes { get; set; }
 }

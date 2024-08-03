@@ -1,5 +1,7 @@
-﻿namespace Rpg.Domain.Attributes;
-public class CharacterAttribute
+﻿using Rpg.Domain.Shared;
+
+namespace Rpg.Domain.Attributes;
+public class CharacterAttribute : SoftDeleteEntity
 {
     public int Intelligence { get; private set; }
     public int Charisma { get; private set; }
